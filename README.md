@@ -67,9 +67,9 @@ The project is organized as follows:
 ├── data/           - Contains the raw data files.
 ├── models/         - Contains the trained models.
 ├── notebooks/      - Contains the Jupyter notebooks.
-├── scripts/        - Contains the Python scripts for preprocessing, training, and evaluation.
-├── requirements.txt - Lists the Python dependencies necessary for this project.
-└── README.md       - The file that you're currently reading.
+├── scripts/        - Contains the Python scripts.
+├── requirements.txt - Lists the Python dependencies.
+└── README.md       - The file that you are currently reading.
 ```
 
 # Results and Evaluation
