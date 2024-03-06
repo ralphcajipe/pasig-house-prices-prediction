@@ -57,6 +57,19 @@ The project uses the following data source:
 
 - [Philippine Real Estate](https://www.kaggle.com/datasets/arloblanco/philippine-real-estate)
 
+The data for this project comes from the `PH_houses_v2.csv` file, which contains information about house prices in the Philippines. The dataset includes the following columns:
+
+- `Description`: A brief description of the house.
+- `Location`: The city where the house is located.
+- `Price (PHP)`: The price of the house in Philippine Pesos.
+- `Bedrooms`: The number of bedrooms in the house.
+- `Bath`: The number of bathrooms in the house.
+- `Floor_area (sqm)`: The floor area of the house in square meters.
+- `Land_area (sqm)`: The land area of the house in square meters.
+- `Latitude`: The latitude coordinate of the house.
+- `Longitude`: The longitude coordinate of the house.
+- `Link`: A link to the online listing of the house.
+
 # Code Structure
 [(Back to top)](#table-of-contents) 
 
