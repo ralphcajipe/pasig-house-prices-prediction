@@ -1,6 +1,6 @@
 <!-- Add banner here -->
-![Banner](./header.png)
-
+![Banner](assets/Pasig_City.png)
+*Photo credit: [Yacine Petitprez](https://www.flickr.com/photos/anykeyh/15090916841/in/photostream/)*
 # Pasig House Prices Prediction
 
 <!-- Add buttons here -->
@@ -11,12 +11,17 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/ralphcajipe/pasig-house-prices-prediction)
 ![GitHub](https://img.shields.io/github/license/ralphcajipe/pasig-house-prices-prediction)
 
-(Describe project in brief here)
+This project focuses on predicting house prices in Pasig City, Philippines. The data used for training is sourced from real estate listings in the Philippines (via [Kaggle](https://www.kaggle.com/datasets/arloblanco/philippine-real-estate)). The dataset is then used to train and build a model using two main approaches: TensorFlow Decision Forests and Simple ML for Sheets, with the Gradient Boosted Trees algorithm being a key component of our model. A web application was also developed so that users can input a property and receive an estimate of how much their preferred house will cost. This project is inspired by the California House Prices ([Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices)).
 
+   <p align="center">
+      <img src="./assets/Lamudi_Prediction_Compare.png" alt="Compare">
+   </p> 
 
 # Quickstart/Demo
 
-(Add a Simple ML video demo for your project here)
+<video width="720" height="480" controls>
+  <source src="demo.mp4" type="video/mp4">
+</video>
 
 <img src="./assets/flask-web-app.jpg" alt="Flask Web App" width="720">
 
@@ -28,7 +33,6 @@
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Development](#development)
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -57,7 +61,7 @@ pip install -r requirements.txt
 
 The project uses the following data source:
 
-- [Philippine Real Estate](https://www.kaggle.com/datasets/arloblanco/philippine-real-estate)
+- [Philippine Real Estate](https://www.kaggle.com/datasets/arloblanco/philippine-real-estate) (Last updated 2022, 2 years ago)
 
 The data for this project comes from the `PH_houses_v2.csv` file, which contains information about house prices in the Philippines. The dataset includes the following columns:
 
@@ -71,6 +75,18 @@ The data for this project comes from the `PH_houses_v2.csv` file, which contains
 - `Latitude`: The latitude coordinate of the house.
 - `Longitude`: The longitude coordinate of the house.
 - `Link`: A link to the online listing of the house.
+
+## Data Extraction
+
+The data for this project was extracted from a Kaggle dataset. Then it was placed in a `csv` file to split it between training and testing dataset (70%-30%)
+
+## Data Cleaning
+
+Before using the data to train our model, we performed extensive data cleaning. This included pandas for cleaning the dataset, removing any features that are not usable for training the model and only focusing the city of Pasig as there are other datas that are located outside Metro Manila and Pasig itself. 
+
+## Model Training
+
+We used the cleaned data to train our house price prediction model. The model was built using TensorFlow Decision Forests and Simple ML for Sheets, with the Gradient Boosted Trees algorithm being a key component. 
 
 # Code Structure
 [(Back to top)](#table-of-contents) 
@@ -95,7 +111,39 @@ The project achieves a Root Mean Squared Error (RMSE) of 1162.05 on the training
 # Usage
 [(Back to top)](#table-of-contents)
 
-1. (Simple ML Sheets)
+1. Go to the Google Workspace Marketplace and search for [`Simple ML for Sheets`](https://workspace.google.com/marketplace/app/simple_ml_for_sheets/685936641092)
+
+   a. After downloading, open the Google Sheet that contains your data (you can download the `train.csv` and `test.csv` respectively).
+
+   <p align="center">
+      <img src="./assets/train_and_test_sheet.png" alt="sheets">
+   </p> 
+
+   b. Click on "Extensions" in the menu, then select "Simple ML for Sheets" > "Start".
+
+   <p align="center">
+      <img src="./assets/Simple_ML_Extension.png" alt="extension">
+   </p> 
+
+   c. In the Simple ML for Sheets sidebar, select the range of cells that contains your data.
+
+   d. Choose the column that you want to predict, then click "Train Model". Simple ML for Sheets will automatically choose a model based on your data. (Remember to tick off `Location` or remove the column `Location` as that is not needed for training the model. And you must be in the `train.csv` file.) The label is also ticked off as it is the one being trained to make predictions later on.
+
+   <p align="center">
+      <img src="./assets/train_screenshot.png" alt="Train Model" height="420">
+   </p> 
+   
+   e. After the model has been trained, switch to `test.csv`, to make predictions. (Also to remove Price_PHP in the `test.csv`, whenever making predictions, as it will cause data leakage if so.)
+
+   <p align="center">
+      <img src="./assets/before_prediction.png" alt="Test Model">
+   </p> 
+
+   f. The predictions are then added to your sheets (generally on the rightmost part of your dataset)
+   
+   <p align="center">
+      <img src="./assets/test_screenshot.png" alt="Test Model">
+   </p> 
 
 2. Run the Flask server (development) using the following command:
    ```bash
