@@ -7,11 +7,12 @@
     <link rel="icon" href="../static/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="../static/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body class="p-5">
     <h1 class="mb-4 responsive-header">Pasig House Prices Prediction 🏠</h1>
     <div class="container">
-        <form method="POST" class="modern-form">
+        <form id="predictionForm" method="POST" class="modern-form">
             <div class="form-group">
                 <label for="Bedrooms">Number of Bedrooms</label>
                 <input class="form-control modern-input" type="number" name="Bedrooms" id="Bedrooms" required>
@@ -34,46 +35,74 @@
             </div>
             <button class="btn btn-primary modern-button" type="submit">Predict</button>
         </form>
-        {% if prediction %}
-        <div class="mt-4 center-text">
-            <h2>Prediction: ₱{{ prediction }}</h2>
-            <div class="mt-4 left-align">
-                <h3>Inputs:</h3>
-                <p>Number of Bedrooms: {{ data.Bedrooms }}</p>
-                <p>Number of Bathrooms: {{ data.Bath }}</p>
-                <p>Floor area (sqm): {{ data.Floor_area_sqm }}</p>
-                <p>Latitude: {{ data.Latitude }}</p>
-                <p>Longitude: {{ data.Longitude }}</p>
-            </div>
+        <div id="predictionResults" class="mt-4 center-text" style="display: none;">
+            <h2 id="predictionText"></h2>
+            <div id="inputsText" class="mt-4 left-align"></div>
         </div>
-        {% endif %}
     </div>
+</body>
 
-    <footer>
-        <div class="footer-content">
-            <p>Created by:</p>
-            <div class="names">
-                <p>
-                    <a href="https://www.linkedin.com/in/stephen-camilon-949698221/" target="_blank">
-                        <img src="../static/linkedin.png" alt="LinkedIn" width="20" height="20">
-                    </a>
-                    <a href="https://github.com/Stephencamilon" target="_blank">
-                        <img src="../static/github.png" alt="GitHub" width="20" height="20">
-                    </a>
-                    Stephen Camilon 
-                </p>
-                <p>
-                    <a href="https://www.linkedin.com/in/ralphcajipe" target="_blank">
-                        <img src="../static/linkedin.png" alt="LinkedIn" width="20" height="20">
-                    </a>
-                    <a href="https://github.com/ralphcajipe" target="_blank">
-                        <img src="../static/github.png" alt="GitHub" width="20" height="20">
-                    </a>
-                    Ralph Cajipe 
-                </p>
-            </div>
+<footer>
+    <div class="footer-content">
+        <p>Created by:</p>
+        <div class="names">
+            <p>
+                <a href="https://www.linkedin.com/in/stephen-camilon-949698221/" target="_blank">
+                    <img src="../static/linkedin.png" alt="LinkedIn" width="20" height="20">
+                </a>
+                <a href="https://github.com/Stephencamilon" target="_blank">
+                    <img src="../static/github.png" alt="GitHub" width="20" height="20">
+                </a>
+                Stephen Camilon 
+            </p>
+            <p>
+                <a href="https://www.linkedin.com/in/ralphcajipe" target="_blank">
+                    <img src="../static/linkedin.png" alt="LinkedIn" width="20" height="20">
+                </a>
+                <a href="https://github.com/ralphcajipe" target="_blank">
+                    <img src="../static/github.png" alt="GitHub" width="20" height="20">
+                </a>
+                Ralph Cajipe &nbsp;
+                <a href="https://github.com/ralphcajipe/pasig-house-prices-prediction" target="_blank">
+                    <img src="../static/github.png" alt="GitHub Project" width="20" height="20">
+                </a>
+                Project Repository
+            </p>
         </div>
-    </footer>
+    </div>
+</footer>
+
+<script>
+    // Reset the form and clear the prediction results when the page loads
+    window.onload = function() {
+        document.getElementById('predictionForm').reset();
+        document.getElementById('predictionResults').style.display = 'none';
+    };
+
+    // Use AJAX to submit the form
+    $('#predictionForm').on('submit', function(e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: '/',
+            method: 'POST',
+            data: $(this).serialize(),
+            success: function(response) {
+                // Display prediction results
+                $('#predictionText').text(`Prediction: ₱${response.prediction}`);
+                $('#inputsText').html(`
+                    <h3>Inputs:</h3>
+                    <p>Number of Bedrooms: ${response.data.Bedrooms}</p>
+                    <p>Number of Bathrooms: ${response.data.Bath}</p>
+                    <p>Floor area (sqm): ${response.data.Floor_area_sqm}</p>
+                    <p>Latitude: ${response.data.Latitude}</p>
+                    <p>Longitude: ${response.data.Longitude}</p>
+                `);
+                $('#predictionResults').show();
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
