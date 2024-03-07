@@ -19,8 +19,7 @@ This project focuses on predicting house prices in Pasig City, Philippines. The 
 
 # Quickstart/Demo
 
-<video width="720" height="480" controls>
-  <source src="demo.mp4" type="video/mp4">
+<video src="./assets/demo.mp4" width="720" height="480" controls>
 </video>
 
 <img src="./assets/flask-web-app.jpg" alt="Flask Web App" width="720">
