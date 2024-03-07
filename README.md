@@ -19,8 +19,7 @@ This project focuses on predicting house prices in Pasig City, Philippines. The 
 
 # Quickstart/Demo
 
-<video src="./assets/demo.mp4" width="720" height="480" controls>
-</video>
+https://github.com/ralphcajipe/pasig-house-prices-prediction/assets/113228328/e6ec2c03-3dd7-4c10-bab3-e9a3264015b7
 
 <img src="./assets/flask-web-app.jpg" alt="Flask Web App" width="720">
 
