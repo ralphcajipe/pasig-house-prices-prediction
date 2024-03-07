@@ -1,5 +1,8 @@
 tensorflow
+tensorflow_decision_forests
 keras
+ydf
+prettytable
 scikit-learn
 pandas
 numpy

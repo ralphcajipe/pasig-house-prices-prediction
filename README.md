@@ -16,7 +16,9 @@
 
 # Quickstart/Demo
 
-(Add a demo for your project here)
+(Add a Simple ML video demo for your project here)
+
+<img src="./assets/flask-web-app.jpg" alt="Flask Web App" width="720">
 
 
 # Table of Contents
@@ -88,17 +90,21 @@ The project is organized as follows:
 # Results and Evaluation
 [(Back to top)](#table-of-contents)
 
-The project achieves [metric] on the test set. The evaluation methodology used is [methodology]. The results are presented in the form of [visualization/graph].
+The project achieves a Root Mean Squared Error (RMSE) of 1162.05 on the training set. The evaluation methodology used is RMSE because the label (Price_PHP) of the model is a numerical column, the model is trained to do regression, and the reported metrics will include such as RMSE. See the jupyter notebook located in the `notebooks` directory for the full details of the evaluation.
 
 # Usage
 [(Back to top)](#table-of-contents)
 
-Next, you have to explain how to use your project. You can create subsections under here to explain more clearly.
+1. (Simple ML Sheets)
 
-# Development
-[(Back to top)](#table-of-contents)
-
-This section is under construction.
+2. Run the Flask server (development) using the following command:
+   ```bash
+   python server.py
+   ```
+   If you want to run the server in production, you can use the following command:
+   ```bash
+   waitress-serve --host 127.0.0.1 server:app
+   ```
 
 
 # Contribute
@@ -106,10 +112,7 @@ This section is under construction.
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-
-
 # License
 [(Back to top)](#table-of-contents)
-
 
 [MIT license](./LICENSE)

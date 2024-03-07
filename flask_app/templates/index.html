@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasig House Prices Prediction</title>
+    <link rel="icon" href="../static/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="../static/styles.css" rel="stylesheet">
+</head>
+<body class="p-5">
+    <h1 class="mb-4 responsive-header">Pasig House Prices Prediction 🏠</h1>
+    <div class="container">
+        <form method="POST" class="modern-form">
+            <div class="form-group">
+                <label for="Bedrooms">Number of Bedrooms</label>
+                <input class="form-control modern-input" type="number" name="Bedrooms" id="Bedrooms" required>
+            </div>
+            <div class="form-group">
+                <label for="Bath">Number of Bathrooms</label>
+                <input class="form-control modern-input" type="number" name="Bath" id="Bath" required>
+            </div>
+            <div class="form-group">
+                <label for="Floor_area_sqm">Floor area (sqm)</label>
+                <input class="form-control modern-input" type="number" name="Floor_area_sqm" id="Floor_area_sqm" required>
+            </div>
+            <div class="form-group">
+                <label for="Latitude">Latitude</label>
+                <input class="form-control modern-input" type="number" step="any" name="Latitude" id="Latitude" required>
+            </div>
+            <div class="form-group">
+                <label for="Longitude">Longitude</label>
+                <input class="form-control modern-input" type="number" step="any" name="Longitude" id="Longitude" required>
+            </div>
+            <button class="btn btn-primary modern-button" type="submit">Predict</button>
+        </form>
+        {% if prediction %}
+        <div class="mt-4 center-text">
+            <h2>Prediction: ₱{{ prediction }}</h2>
+            <div class="mt-4 left-align">
+                <h3>Inputs:</h3>
+                <p>Number of Bedrooms: {{ data.Bedrooms }}</p>
+                <p>Number of Bathrooms: {{ data.Bath }}</p>
+                <p>Floor area (sqm): {{ data.Floor_area_sqm }}</p>
+                <p>Latitude: {{ data.Latitude }}</p>
+                <p>Longitude: {{ data.Longitude }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Created by:</p>
+            <div class="names">
+                <p>
+                    <a href="https://www.linkedin.com/in/stephen-camilon-949698221/" target="_blank">
+                        <img src="../static/linkedin.png" alt="LinkedIn" width="20" height="20">
+                    </a>
+                    <a href="https://github.com/Stephencamilon" target="_blank">
+                        <img src="../static/github.png" alt="GitHub" width="20" height="20">
+                    </a>
+                    Stephen Camilon 
+                </p>
+                <p>
+                    <a href="https://www.linkedin.com/in/ralphcajipe" target="_blank">
+                        <img src="../static/linkedin.png" alt="LinkedIn" width="20" height="20">
+                    </a>
+                    <a href="https://github.com/ralphcajipe" target="_blank">
+                        <img src="../static/github.png" alt="GitHub" width="20" height="20">
+                    </a>
+                    Ralph Cajipe 
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
