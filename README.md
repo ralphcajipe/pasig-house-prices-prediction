@@ -19,8 +19,34 @@ This project focuses on predicting house prices in Pasig City, Philippines. The 
 
 # Quickstart/Demo
 
+### Simple ML Sheets in action with the Dataset
 https://github.com/ralphcajipe/pasig-house-prices-prediction/assets/113228328/e6ec2c03-3dd7-4c10-bab3-e9a3264015b7
 
+### Jupyter Notebook or Python Script
+To use the model, you can load it with Google's [Yggdrasil Decision Forests (YDF)](https://github.com/google/yggdrasil-decision-forests) and make predictions with it. Yggdrasil Decision Forests powers TensorFlow Decision Forests. See the jupyter notebook located in the `notebooks` directory for the code implementation of training and testing using TensorFlow.  Here's an example of how to do this:
+```bash
+
+# Load the model with YDF
+import ydf
+
+model = ydf.from_tensorflow_decision_forests("../models/pasig-model")
+
+# Make predictions with the model
+examples = {
+  "Bedrooms" : [2],
+  "Bath" : [2],
+  "Floor_area_sqm" : [104],
+  "Latitude" : [14.575822],
+  "Longitude" : [121.064324],
+}
+model.predict(examples)
+
+# Output: array([32212794.], dtype=float32)
+```
+
+
+### Flask Web App
+See `flask_app` directory for the code implementation on how to deploy the model as a web application.
 <img src="./assets/flask-web-app.jpg" alt="Flask Web App" width="720">
 
 
