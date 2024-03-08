@@ -47,7 +47,7 @@ model.predict(examples)
 
 ### Flask Web App
 See `flask_app` directory for the code implementation on how to deploy the model as a web application.
-<img src="./assets/flask-web-app.jpg" alt="Flask Web App" width="720">
+<img src="./assets/flask-web-app-new.png" alt="Flask Web App" width="720">
 
 
 # Table of Contents
