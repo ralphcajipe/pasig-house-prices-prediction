@@ -109,7 +109,7 @@ The project achieves a Root Mean Squared Error (RMSE) of 1162.05 on the training
 # Usage
 [(Back to top)](#table-of-contents)
 
-1. Go to the Google Workspace Marketplace and search for [`Simple ML for Sheets`](https://workspace.google.com/marketplace/app/simple_ml_for_sheets/685936641092)
+#### 1. Go to the Google Workspace Marketplace and search for [`Simple ML for Sheets`](https://workspace.google.com/marketplace/app/simple_ml_for_sheets/685936641092)
 
    a. After downloading, open the Google Sheet that contains your data (you can download the `train.csv` and `test.csv` respectively).
 
@@ -143,7 +143,7 @@ The project achieves a Root Mean Squared Error (RMSE) of 1162.05 on the training
       <img src="./assets/test_screenshot.png" alt="Test Model">
    </p> 
 
-2. Run the Flask server (development) using the following command:
+#### 2. Using the Flask web app. Run the Flask server (development) using the following command:
    ```bash
    python server.py
    ```
