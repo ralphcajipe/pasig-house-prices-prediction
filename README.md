@@ -112,6 +112,21 @@ Before using the data to train our model, we performed extensive data cleaning. 
 
 We used the cleaned data to train our house price prediction model. The model was built using TensorFlow Decision Forests and Simple ML for Sheets, with the Gradient Boosted Trees algorithm being a key component. 
 
+## Obtaining Latitude and Longitude for Pasig City
+
+To compare real-time property price data from Lamudi in Pasig City with our project, you'll need the latitude and longitude of the specific location you're interested in. Here's how you can obtain these coordinates:
+
+1. Identify the address of the property you're interested in.
+2. Enter this address into Google Maps.
+3. Right-click on the red pin that marks the location of the address.
+4. The latitude and longitude of the location will be displayed. Note that the latitude is the first number (on the left), and the longitude is the second number (on the right).
+
+You can then input these coordinates into our project to perform the comparison.
+
+   <p align="center">
+      <img src="./assets/maps.png" alt="sheets">
+   </p> 
+
 # Code Structure
 [(Back to top)](#table-of-contents) 
 
