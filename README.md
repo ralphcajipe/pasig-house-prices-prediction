@@ -11,7 +11,7 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/ralphcajipe/pasig-house-prices-prediction)
 ![GitHub](https://img.shields.io/github/license/ralphcajipe/pasig-house-prices-prediction)
 
-This project focuses on predicting house prices in Pasig City, Philippines. The data used for training is sourced from real estate listings in the Philippines (via [Kaggle](https://www.kaggle.com/datasets/arloblanco/philippine-real-estate)). The dataset is then used to train and build a model using two main approaches: TensorFlow Decision Forests and Simple ML for Sheets, with the Gradient Boosted Trees algorithm being a key component of our model. A web application was also developed so that users can input a property and receive an estimate of how much their preferred house will cost. This project is inspired by the California House Prices ([Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices)).
+This project predicts house prices in Pasig City, Philippines. The data used for training is sourced from real estate listings in the Philippines (via [Kaggle](https://www.kaggle.com/datasets/arloblanco/philippine-real-estate)). The dataset is then used to train and build a model using two main approaches: TensorFlow Decision Forests and Simple ML for Sheets, with the Gradient Boosted Trees algorithm being a key component of our model. A web application was also developed so that users can input a property and receive an estimate of how much their preferred house will cost. This project is inspired by the California House Prices ([Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices)).
 
    <p align="center">
       <img src="./assets/Lamudi_Prediction_Compare.png" alt="Compare">
