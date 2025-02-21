@@ -1,6 +1,6 @@
 import pandas as pd
 
-# Load your data
+# Load csv data
 df = pd.read_csv('data/PH_houses_v2.csv')
 
 df.columns
